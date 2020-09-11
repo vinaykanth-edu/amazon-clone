@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 function Header() {
   return (
@@ -8,22 +10,31 @@ function Header() {
         className={styles.header_logo}
         src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
       />
-      <div className="header_search">
-          <input className= {styles.header_search} type="text" />
+      <div className={styles.header_search}>
+        <input className={styles.header_searchInput} type="text" />
+        <SearchIcon className={styles.header_searchIcon} />
       </div>
-      <div className="header_nav">
-        <div className="header_option">
-          <span className="header_optionLineOne">Hello Guest</span>
-          <span className="header_optionLineTwo">Sign In</span>
+      <div className={styles.header_nav}>
+        <div className={styles.header_option}>
+          <span className={styles.header_optionLineOne}>Hello Guest</span>
+          <span className={styles.header_optionLineTwo}>Sign In</span>
         </div>
-        <div className="header_option">
-          <span className="header_optionLineOne">Returns</span>
-          <span className="header_optionLineTwo">& Orders</span>
+        <div className={styles.header_option}>
+          <span className={styles.header_optionLineOne}>Returns</span>
+          <span className={styles.header_optionLineTwo}>& Orders</span>
         </div>
-        <div className="header_option">
-          <span className="header_optionLineOne">Your</span>
-          <span className="header_optionLineTwo">Prime</span>
+        <div className={styles.header_option}>
+          <span className={styles.header_optionLineOne}>Your</span>
+          <span className={styles.header_optionLineTwo}>Prime</span>
         </div>
+
+        <div className={styles.header_optionBasket}>
+            <ShoppingBasketIcon />
+            <span className={styles.header_optionLineTwo && styles.header_basketCount} >0</span>
+        </div>
+
+        
+
       </div>
     </div>
   );
